@@ -3,22 +3,7 @@ const faker = require('faker');
 faker.locale = "en";
 
 // uncomment to create data
-// for (let i = 0; i < 1000; i++)
-//     fs.appendFile('test.csv', faker.internet.url() + ',\n', function (err) {
-//         if (err) throw err;
-//     });
-// for (let i = 0; i < 1000; i++)
-//     fs.appendFile('test.csv', faker.internet.email() + ',\n', function (err) {
-//         if (err) throw err;
-//     });
-// for (let i = 0; i < 1000; i++)
-//     fs.appendFile('test.csv', faker.phone.phoneNumberFormat() + ',\n', function (err) {
-//         if (err) throw err;
-//     });
-// for (let i = 0; i < 1000; i++)
-//     fs.appendFile('test.csv', '@' + faker.name.firstName() + ',\n', function (err) {
-//         if (err) throw err;
-//     });
+// fillMockFile();
 
 // read generated data
 const lineReader = require('readline').createInterface({
@@ -39,3 +24,22 @@ lineReader.on('line', function (line) {
         console.log('doesn\'t match:', data);
     }
 });
+
+function fillMockFile() {
+    for (let i = 0; i < 1000; i++)
+        fs.appendFile('test.csv', faker.internet.url() + ',\n', function (err) {
+            if (err) throw err;
+        });
+    for (let i = 0; i < 1000; i++)
+        fs.appendFile('test.csv', faker.internet.email() + ',\n', function (err) {
+            if (err) throw err;
+        });
+    for (let i = 0; i < 1000; i++)
+        fs.appendFile('test.csv', faker.phone.phoneNumberFormat() + ',\n', function (err) {
+            if (err) throw err;
+        });
+    for (let i = 0; i < 1000; i++)
+        fs.appendFile('test.csv', '@' + faker.name.firstName() + ',\n', function (err) {
+            if (err) throw err;
+        });
+}
