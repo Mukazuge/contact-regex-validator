@@ -1,5 +1,10 @@
-required: 
-  npm install faker
+# Read me
+
+Requirements:
+  Node js
   
-to run just type:
-node test.js
+before run type:
+  npm install
+  
+To run just type:
+  node test.js
